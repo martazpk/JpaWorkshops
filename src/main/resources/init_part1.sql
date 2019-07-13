@@ -5,7 +5,7 @@ CREATE TABLE user1.person (
   city varchar(50),
   street varchar(50),
   zip_code varchar(50)
-)
+);
 
 ALTER TABLE user1.person ADD COLUMN billing_street varchar(50);
 ALTER TABLE user1.person ADD COLUMN billing_city varchar(50);
