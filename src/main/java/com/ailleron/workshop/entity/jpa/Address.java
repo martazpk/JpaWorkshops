@@ -1,12 +1,20 @@
 package com.ailleron.workshop.entity.jpa;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Address {
 
     private String city;
 
     private String street;
 
+    @Column(name = "zip_code", nullable = false)
     private String zipCode;
+
+    public Address() {
+    }
 
     public Address(String city, String street, String zipCode) {
         this.city = city;

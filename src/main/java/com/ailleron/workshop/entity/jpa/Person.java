@@ -1,13 +1,26 @@
 package com.ailleron.workshop.entity.jpa;
 
+import javax.persistence.*;
+
+@Entity
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private String surname;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="street", column =@Column(name="billing_street")),
+            @AttributeOverride(name="city", column =@Column(name="billing_city")),
+            @AttributeOverride(name="zipCode", column =@Column(name="billing_zip_code"))
+    })
+    private Address billingAddress;
 
+    private String surname;
+    @Embedded
     private Address address;
 
     public Long getId() {
@@ -40,6 +53,14 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Address getBillingAddress() {
+        return billingAddress;
+    }
+
+    public void setBillingAddress(Address billingAddress) {
+        this.billingAddress = billingAddress;
     }
 
     @Override

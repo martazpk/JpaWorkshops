@@ -1,5 +1,9 @@
 package com.ailleron.workshop.entity.jpa;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Device {
 
     public Device() {
@@ -10,6 +14,7 @@ public abstract class Device {
         this.localization = localization;
     }
 
+    @Column(name = "device_name")
     private String deviceName;
 
     private String localization;

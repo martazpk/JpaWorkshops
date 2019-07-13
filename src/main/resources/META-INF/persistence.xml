@@ -5,11 +5,16 @@
 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
     <persistence-unit name="jpa-configuration">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.ailleron.workshop.entity.jpa.Person</class>
+        <class>com.ailleron.workshop.entity.jpa.Student</class>
+        <class>com.ailleron.workshop.entity.jpa.Author</class>
+        <class>com.ailleron.workshop.entity.jpa.Book</class>
+        <class>com.ailleron.workshop.entity.jpa.Computer</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.4.14.181:5432/jpa_workshops?currentSchema=user1"/>
-            <property name="javax.persistence.jdbc.user" value="workshops"/>
-            <property name="javax.persistence.jdbc.password" value="workshops"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="postgres"/>
             <!--<property name="eclipselink.logging.level" value="FINE"/>-->
         </properties>
     </persistence-unit>
